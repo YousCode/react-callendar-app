@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat'
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 2195px + 30px * 2;
+    width: 100%;
+    margin: 0 auto;
+    // padding: 0 30px;
+}
+
+
+

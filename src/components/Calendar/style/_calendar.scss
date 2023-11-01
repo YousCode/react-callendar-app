@@ -1,0 +1,113 @@
+.calendar-block{
+    padding-top: 65px;
+    background-color: rgba(42, 46, 65, 0.80); 
+    backdrop-filter: blur(5px); 
+    color: white;
+    height: auto;
+    width: auto;
+    &__wrapper{
+        background: rgba(255, 255, 255, 0);
+        mix-blend-mode: exclusion;
+        padding: 0px 30px;
+    }
+
+    // calendar indent
+    .css-1rv8zyt-MuiStack-root{
+        background-color: rgba(42, 46, 65, 0); 
+        backdrop-filter: blur(5px); 
+        padding-top: 0px ;
+        align-items: center;
+    }
+
+    // bottom arrow in calendar
+    .css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon,
+    // left and right button on calendar
+    .css-1vooibu-MuiSvgIcon-root, 
+    // days of the week on the calendar
+    .css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel,
+    // number on the calendar
+    .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root{
+        color: white;
+    }
+    .css-1t5ehk6-MuiDateCalendar-root{
+        background: rgba(255, 255, 255, 0);
+        mix-blend-mode: exclusion;
+        height: auto;
+        max-height: 100%;
+        width: auto;
+        backdrop-filter: none;
+    }
+
+    
+
+    // top of the calendar
+    .css-nk89i7-MuiPickersCalendarHeader-root{
+        margin-bottom: 30px;
+    }
+
+    // left and right button on calendar
+    .css-1vooibu-MuiSvgIcon-root{
+        transition: all 0.3s ease 0s;
+        height: 2em;
+        width: 2em;
+    }
+
+    // month and year on the calendar
+    .css-dplwbx-MuiPickersCalendarHeader-label{
+        transition: all 0.3s ease 0s;
+        font-family: "Montserrat";
+        font-size: 36px;
+    }
+
+    // block of days of the week and numbers on the calendar
+    .css-15v8kdh-MuiPickersFadeTransitionGroup-root-MuiDateCalendar-viewTransitionContainer{
+        border-top: 2px solid rgba(0, 0, 0, 0.17);
+        padding-top: 22px;
+    }
+
+    // number on the calendar
+    .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root{
+        transition: all 0.3s ease 0s;
+        font-size: 20px;
+    }
+
+    // row of days of the week in the calendar
+    .css-i5q14k-MuiDayCalendar-header{
+        justify-content: space-between;
+    }
+
+    // a series of numbers on a calendar
+    .css-flbe84-MuiDayCalendar-weekContainer{
+        margin: 15px 0px;
+        justify-content: space-between;
+    }
+    
+    // current date on the calendar
+    .css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected){
+        border: none;
+        background-color: #1976d2;
+    }
+    .css-1t0788u-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition{
+        min-height: 400px;
+    }
+
+    @media (max-width: 1600px) {
+        // month and year on the calendar
+        .css-dplwbx-MuiPickersCalendarHeader-label{
+            font-size: 20px;
+        }
+        // left and right button on calendar
+        .css-1vooibu-MuiSvgIcon-root{
+            height: 1.4em;
+            width: 1.4em;
+        }
+        // number on the calendar
+        .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root{
+            font-size: 16px;
+        }
+
+    }
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}

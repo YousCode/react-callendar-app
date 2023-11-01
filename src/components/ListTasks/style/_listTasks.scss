@@ -1,0 +1,132 @@
+.list-tasks{
+    margin-top: 65px;
+    margin-bottom: 65px;
+    padding-left: 30px;
+
+   flex: 1;
+
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #F3F3F3;
+    }
+
+    &__date{
+        color: #243D6F;
+        font-size: 36px;
+    }
+
+    &__tasks{
+        margin-top: 102px;
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        transition: all 0.3s ease 0s;
+
+        &-time{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 67px;
+
+            span{
+                font-size: 26px;
+                color: #A4B0C3;
+                font-weight: 500;
+            }
+        }
+
+        &-border{
+            width: 100%;
+            display: block;
+            background-color: #F3F3F3;
+            height: 2px;
+        }
+
+        &-comment{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 55px;
+            position: absolute;
+            left: 133px;
+            width: 91.5%;
+            opacity: 0.75;
+            z-index: 2;
+                span{
+                color: #243D6F;
+                font-size: 28px;
+                opacity: 1;
+            }
+        }
+
+    }
+    @media (max-width:1600px) {
+        &__date{
+            font-size: 28px;
+        }
+
+        &__tasks{
+            margin-top: 80px;
+            &-time{
+                span{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1100px) {
+        margin-right: 30px;
+        &__date{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    @media (max-width: 950px) {
+        &__tasks{
+            &-comment{
+                width: 89%;
+            }
+        }
+    }
+    @media (max-width: 700px) {
+        &__tasks{
+            &-comment{
+                width: 85%;
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        margin-top: 40px;
+        &__date{
+            font-size: 20px;
+        }
+        &__tasks{
+            margin-top: 40px;
+            gap: 90px;
+            &-time{
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @media (max-width: 550px) {
+        &__tasks{
+            &-comment{
+                width: 82%;
+            }
+        }
+    }
+    @media (max-width: 450px) {
+        &__tasks{
+            &-comment{
+                width: 75%;
+            }
+        }
+    }
+}

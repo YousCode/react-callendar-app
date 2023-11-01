@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 2255px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.list-tasks {
+  margin-top: 65px;
+  margin-bottom: 65px;
+  padding-left: 30px;
+  flex: 1;
+}
+.list-tasks__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #F3F3F3;
+}
+.list-tasks__date {
+  color: #243D6F;
+  font-size: 36px;
+}
+.list-tasks__tasks {
+  margin-top: 102px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  transition: all 0.3s ease 0s;
+}
+.list-tasks__tasks-time {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 67px;
+}
+.list-tasks__tasks-time span {
+  font-size: 26px;
+  color: #A4B0C3;
+  font-weight: 500;
+}
+.list-tasks__tasks-border {
+  width: 100%;
+  display: block;
+  background-color: #F3F3F3;
+  height: 2px;
+}
+.list-tasks__tasks-comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 55px;
+  position: absolute;
+  left: 133px;
+  width: 91.5%;
+  opacity: 0.75;
+  z-index: 2;
+}
+.list-tasks__tasks-comment span {
+  color: #243D6F;
+  font-size: 28px;
+  opacity: 1;
+}
+@media (max-width: 1600px) {
+  .list-tasks__date {
+    font-size: 28px;
+  }
+  .list-tasks__tasks {
+    margin-top: 80px;
+  }
+  .list-tasks__tasks-time span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .list-tasks {
+    margin-right: 30px;
+  }
+  .list-tasks__date {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media (max-width: 950px) {
+  .list-tasks__tasks-comment {
+    width: 89%;
+  }
+}
+@media (max-width: 700px) {
+  .list-tasks__tasks-comment {
+    width: 85%;
+  }
+}
+@media (max-width: 600px) {
+  .list-tasks {
+    margin-top: 40px;
+  }
+  .list-tasks__date {
+    font-size: 20px;
+  }
+  .list-tasks__tasks {
+    margin-top: 40px;
+    gap: 90px;
+  }
+  .list-tasks__tasks-time span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 550px) {
+  .list-tasks__tasks-comment {
+    width: 82%;
+  }
+}
+@media (max-width: 450px) {
+  .list-tasks__tasks-comment {
+    width: 75%;
+  }
+}
+
+.calendar-block {
+  padding-top: 65px;
+  background-color: rgba(42, 46, 65, 0.8);
+  backdrop-filter: blur(5px);
+  color: white;
+  height: auto;
+  width: auto;
+}
+.calendar-block__wrapper {
+  background: rgba(255, 255, 255, 0);
+  mix-blend-mode: exclusion;
+  padding: 0px 30px;
+}
+.calendar-block .css-1rv8zyt-MuiStack-root {
+  background-color: rgba(42, 46, 65, 0);
+  backdrop-filter: blur(5px);
+  padding-top: 0px;
+  align-items: center;
+}
+.calendar-block .css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon,
+.calendar-block .css-1vooibu-MuiSvgIcon-root,
+.calendar-block .css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel,
+.calendar-block .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root {
+  color: white;
+}
+.calendar-block .css-1t5ehk6-MuiDateCalendar-root {
+  background: rgba(255, 255, 255, 0);
+  mix-blend-mode: exclusion;
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  backdrop-filter: none;
+}
+.calendar-block .css-nk89i7-MuiPickersCalendarHeader-root {
+  margin-bottom: 30px;
+}
+.calendar-block .css-1vooibu-MuiSvgIcon-root {
+  transition: all 0.3s ease 0s;
+  height: 2em;
+  width: 2em;
+}
+.calendar-block .css-dplwbx-MuiPickersCalendarHeader-label {
+  transition: all 0.3s ease 0s;
+  font-family: "Montserrat";
+  font-size: 36px;
+}
+.calendar-block .css-15v8kdh-MuiPickersFadeTransitionGroup-root-MuiDateCalendar-viewTransitionContainer {
+  border-top: 2px solid rgba(0, 0, 0, 0.17);
+  padding-top: 22px;
+}
+.calendar-block .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root {
+  transition: all 0.3s ease 0s;
+  font-size: 20px;
+}
+.calendar-block .css-i5q14k-MuiDayCalendar-header {
+  justify-content: space-between;
+}
+.calendar-block .css-flbe84-MuiDayCalendar-weekContainer {
+  margin: 15px 0px;
+  justify-content: space-between;
+}
+.calendar-block .css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  border: none;
+  background-color: #1976d2;
+}
+.calendar-block .css-1t0788u-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition {
+  min-height: 400px;
+}
+@media (max-width: 1600px) {
+  .calendar-block .css-dplwbx-MuiPickersCalendarHeader-label {
+    font-size: 20px;
+  }
+  .calendar-block .css-1vooibu-MuiSvgIcon-root {
+    height: 1.4em;
+    width: 1.4em;
+  }
+  .calendar-block .css-1u23akw-MuiButtonBase-root-MuiPickersDay-root {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1100px) {
+  .calendar-block {
+    display: none;
+  }
+}
+
+.my-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+}
+.my-modal__title {
+  flex: 1;
+  font-family: "Montserrat";
+  font-size: 48px;
+  color: #5C5F6C;
+  border-bottom: 3px solid #E0CCFC;
+  padding-bottom: 12px;
+}
+.my-modal__color {
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+}
+.my-modal__date {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 46px;
+}
+.my-modal__time {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.my-modal__comment {
+  flex: 1;
+  margin-top: 61px;
+  border-bottom: 3px solid #E0CCFC;
+}
+.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error)::before,
+.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root::after,
+.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root::before {
+  border-bottom: none;
+}
+.my-modal__comment .css-hu7vcy-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+.my-modal__button {
+  margin-top: 42px;
+  display: flex;
+  justify-content: flex-end;
+}
+.my-modal__button button {
+  background: none;
+  border: none;
+  padding: 9px 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+@media (max-width: 1600px) {
+  .my-modal__title {
+    font-size: 30px;
+  }
+  .my-modal__color {
+    width: 30px;
+    height: 30px;
+  }
+  .my-modal__button button {
+    font-size: 20px;
+    padding: 6px 40px;
+  }
+}
+@media (max-width: 1100px) {
+  .my-modal__title {
+    font-size: 20px;
+  }
+  .my-modal__color {
+    width: 25px;
+    height: 25px;
+  }
+  .my-modal__date {
+    margin-top: 26px;
+  }
+  .my-modal__comment {
+    margin-top: 30px;
+  }
+  .my-modal__button button {
+    font-size: 18px;
+    padding: 3px 30px;
+  }
+}
+@media (max-width: 600px) {
+  .my-modal__header {
+    gap: 20px;
+  }
+  .my-modal__title {
+    font-size: 13px;
+  }
+  .my-modal__color {
+    width: 20px;
+    height: 20px;
+  }
+  .my-modal__date {
+    gap: 14px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .my-modal__time {
+    margin-top: 20px;
+    gap: 9px;
+    flex-direction: column;
+  }
+  .my-modal__comment {
+    margin-top: 20px;
+  }
+  .my-modal__button {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .my-modal__button button {
+    font-size: 15px;
+    padding: 2px 20px;
+  }
+}
+
+.date-input {
+  background-color: rgba(98, 0, 238, 0.2);
+  text-align: center;
+  border: none;
+  font-size: 20px;
+  font-family: "Montserrat";
+  padding: 6px 17px;
+  line-height: 24px;
+  cursor: pointer;
+}
+@media (max-width: 1600px) {
+  .date-input {
+    font-size: 18px;
+    padding: 4px 12px;
+  }
+}
+@media (max-width: 1100px) {
+  .date-input {
+    font-size: 15px;
+    padding: 4px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .date-input {
+    font-size: 12px;
+    padding: 0px 0px;
+  }
+}
+
+.time-input {
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  max-width: 142px;
+  padding: 6px 17px;
+  font-family: "Montserrat";
+  background: rgba(98, 0, 238, 0.2);
+  cursor: pointer;
+  line-height: 24px;
+}
+@media (max-width: 1600px) {
+  .time-input {
+    font-size: 18px;
+    padding: 4px 12px;
+  }
+}
+@media (max-width: 1100px) {
+  .time-input {
+    font-size: 15px;
+    padding: 4px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .time-input {
+    font-size: 12px;
+    padding: 0px 0px;
+  }
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+  gap: 141px;
+}
+@media (max-width: 1600px) {
+  .App {
+    gap: 90px;
+  }
+}

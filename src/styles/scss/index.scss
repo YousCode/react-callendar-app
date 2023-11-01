@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import "./reset"; 
+@import "../../components/ListTasks/style/listTasks";
+@import "../../components/Calendar/style/calendar";
+@import "../../components/MyModal/style/myModal";
+@import "../../components/ui/uiPickers";
+
+
+.App{
+    display: flex;
+    justify-content: space-between;
+    gap: 141px;
+    @media (max-width: 1600px) {
+        gap: 90px;
+    }
+}
