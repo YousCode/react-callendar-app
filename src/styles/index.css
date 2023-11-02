@@ -73,9 +73,20 @@ ul {
   opacity: 0.75;
   z-index: 2;
 }
-.list-tasks__tasks-comment span {
+.list-tasks__tasks-comment .task__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.list-tasks__tasks-comment .task__description h4 {
   color: #243D6F;
   font-size: 28px;
+  opacity: 1;
+}
+.list-tasks__tasks-comment .task__description span {
+  color: #243D6F;
+  font-size: 20px;
   opacity: 1;
 }
 @media (max-width: 1600px) {
@@ -123,6 +134,15 @@ ul {
   }
   .list-tasks__tasks-time span {
     font-size: 14px;
+  }
+  .list-tasks__tasks-comment {
+    padding: 0px 15px;
+  }
+  .list-tasks__tasks-comment .task__description h4 {
+    font-size: 18px;
+  }
+  .list-tasks__tasks-comment .task__description span {
+    font-size: 12px;
   }
 }
 @media (max-width: 550px) {
@@ -233,8 +253,12 @@ ul {
   font-family: "Montserrat";
   font-size: 48px;
   color: #5C5F6C;
+  border: none;
   border-bottom: 3px solid #E0CCFC;
   padding-bottom: 12px;
+}
+.my-modal__title:focus {
+  outline: none;
 }
 .my-modal__color {
   width: 37px;
@@ -258,13 +282,16 @@ ul {
   margin-top: 61px;
   border-bottom: 3px solid #E0CCFC;
 }
-.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error)::before,
-.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root::after,
-.my-modal__comment .css-v4u5dn-MuiInputBase-root-MuiInput-root::before {
-  border-bottom: none;
-}
-.my-modal__comment .css-hu7vcy-MuiFormControl-root-MuiTextField-root {
+.my-modal__comment input {
   width: 100%;
+  border: none;
+  background: none;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.my-modal__comment input:focus {
+  outline: none;
 }
 .my-modal__button {
   margin-top: 42px;

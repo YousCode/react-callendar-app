@@ -10,8 +10,12 @@
         font-family: "Montserrat";
         font-size: 48px;
         color: #5C5F6C;
+        border: none;
         border-bottom: 3px solid #E0CCFC;
         padding-bottom: 12px;
+        &:focus{
+            outline: none;
+        }
     }
 
     &__color{
@@ -38,15 +42,16 @@
         flex: 1;
         margin-top: 61px;
         border-bottom: 3px solid #E0CCFC;
-
-        .css-v4u5dn-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled, .Mui-error)::before,
-        .css-v4u5dn-MuiInputBase-root-MuiInput-root::after,
-        .css-v4u5dn-MuiInputBase-root-MuiInput-root::before{
-            border-bottom: none;
-        }
-
-        .css-hu7vcy-MuiFormControl-root-MuiTextField-root{
+        input{
             width: 100%;
+            border: none;
+            background: none;
+            padding-left: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            &:focus{
+                outline: none;
+            }
         }
     }
 

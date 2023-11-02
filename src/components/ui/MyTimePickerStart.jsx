@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -10,6 +10,9 @@ function MyTimePickerStart() {
 
   const dispatch = useDispatch()
   const timeStart = useSelector(state => state.time.timeStart)
+
+  const inputRef = useRef(null);
+  const pickerRef = useRef(null);
 
   const [showPicker, setShowPicker] = useState(false);
   
@@ -27,11 +30,33 @@ function MyTimePickerStart() {
   const formatTime = (time) => {
     return time.format('h:mm A'); 
   };
+
+  const handleClickOutside = (event) => {
+    if (showPicker) {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        pickerRef.current &&
+        !pickerRef.current.contains(event.target)
+      ) {
+        setShowPicker(false);
+      }
+    }
+  };
+
+  useEffect(()=> {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showPicker])
     
 
   return (
   <div style={{position: "relative"}}>
     <input
+      ref={inputRef}
       className='time-input'
       type="text"
       value={formatTime(timeStart)}
@@ -40,7 +65,7 @@ function MyTimePickerStart() {
     />
 
     {showPicker && (
-      <div style={{position: "absolute", zIndex: "3"}}>
+      <div style={{position: "absolute", zIndex: "3"}} ref={pickerRef}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DemoContainer components={["StaticTimePicker", "MultiSectionDigitalClock"]}>
             <StaticTimePicker

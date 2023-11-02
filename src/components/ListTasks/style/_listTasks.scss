@@ -55,11 +55,24 @@
             width: 91.5%;
             opacity: 0.75;
             z-index: 2;
+
+            .task__description{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                h4{
+                    color: #243D6F;
+                    font-size: 28px;
+                    opacity: 1;
+                }
                 span{
-                color: #243D6F;
-                font-size: 28px;
-                opacity: 1;
+                    color: #243D6F;
+                    font-size: 20px;
+                    opacity: 1;
+                }
             }
+    
         }
 
     }
@@ -111,6 +124,17 @@
             &-time{
                 span{
                     font-size: 14px;
+                }
+            }
+            &-comment{
+                padding: 0px 15px;
+                .task__description{
+                    h4{
+                        font-size: 18px;
+                    }
+                    span{
+                        font-size: 12px;
+                    }
                 }
             }
         }

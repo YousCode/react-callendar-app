@@ -107,10 +107,13 @@ function ListTasks() {
                                             left: 90
                                         },
                                     }} 
-                                        className='list-tasks__tasks-comment'  
+                                        className='list-tasks__tasks-comment task'  
                                         key={taskIndex}
                                 >
-                                    <span>{task.comment}</span>
+                                    <div className='task__description'>
+                                        <h4>{task.title}</h4>
+                                        <span>{task.comment}</span>
+                                    </div>
                                     <ClearIcon sx=
                                     {{
                                         background: "#000000A8", 

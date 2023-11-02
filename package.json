@@ -1,5 +1,5 @@
 {
-  "name": "calendar-app",
+  "name": "taskslist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

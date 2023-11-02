@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers';
@@ -6,6 +6,9 @@ import { Box } from '@mui/material';
 
 function MyDatePicker({taskDate ,setTaskDate}) {
     const [showPicker, setShowPicker] = useState(false);
+
+    const inputRef =  useRef(null);
+    const pickerRef = useRef(null);
 
     const handleDateChange = (newDate) => {
         setTaskDate(newDate)
@@ -23,9 +26,32 @@ function MyDatePicker({taskDate ,setTaskDate}) {
         setShowPicker(false)
     }
 
+    const handleClickOutside = (event) => {
+        if (showPicker) {
+          if (
+            inputRef.current &&
+            !inputRef.current.contains(event.target) &&
+            pickerRef.current &&
+            !pickerRef.current.contains(event.target)
+          ) {
+            setShowPicker(false);
+          }
+        }
+      };
+    
+      useEffect(()=> {
+        document.addEventListener("click", handleClickOutside);
+    
+        return () => {
+          document.removeEventListener("click", handleClickOutside);
+        };
+      }, [showPicker])
+
+
     return (
         <div style={{position: "relative"}}>
             <input
+                ref={inputRef}
                 className='date-input' 
                 type="text"
                 value={formatDate(taskDate)}
@@ -34,7 +60,7 @@ function MyDatePicker({taskDate ,setTaskDate}) {
             />
 
             {showPicker && (
-                <Box sx=
+                <Box ref={pickerRef} sx=
                 {{
                     position: "absolute", 
                     zIndex: "3",
